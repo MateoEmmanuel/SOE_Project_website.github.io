@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <script>
+        // Apply theme from localStorage or system before page renders
+        (function() {
+            try {
+                var theme = localStorage.getItem('site-theme');
+                if (theme === 'light' || theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', theme);
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                    // Apply language from localStorage
+                    var lang = localStorage.getItem('site-language');
+                    if (lang) {
+                        document.documentElement.setAttribute('lang', lang);
+                    }
+            } catch (e) {}
+        })();
+            // Listen for theme changes in other tabs
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'site-theme') {
+                    var theme = e.newValue;
+                    if (theme === 'light' || theme === 'dark') {
+                        document.documentElement.setAttribute('data-theme', theme);
+                    } else {
+                        document.documentElement.removeAttribute('data-theme');
+                    }
+                } else if (e.key === 'site-language') {
+                    var lang = e.newValue;
+                    if (lang) {
+                        document.documentElement.setAttribute('lang', lang);
+                    }
+                }
+            });
+        </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DYCI 3D Interactive Map</title>
+    <link rel="stylesheet" href="css/TourPage.css" />
+</head>
+<body>
+    <header>
+        <nav class="site-nav" role="navigation" aria-label="Main navigation">
+            <a class="brand" href="HomePage.html">
+                <img src="assets/images/dyci-logo-with-text-white.webp" alt="Dr. Yanga Colleges Inc." class="brand-logo" />
+            </a>
+
+            <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+
+            <ul id="nav-list" class="nav-list">
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="MapPage.html">Map</a></li>
+                <li><a href="TourPage.html">Tour</a></li>
+                <li><a href="SettingPage.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- existing page content goes here -->
+    </main>
+
+    <script>
+        // Hamburger toggle, animate to X, close on X, and keep menu offset
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.querySelector('.nav-toggle');
+            var navList = document.getElementById('nav-list');
+            if (!btn || !navList) return;
+            btn.addEventListener('click', function () {
+                var expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                navList.classList.toggle('open');
+            });
+            // Close menu on Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+                    btn.setAttribute('aria-expanded', 'false');
+                    navList.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

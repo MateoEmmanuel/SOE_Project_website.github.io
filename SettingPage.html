@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DYCI 3D Interactive Map</title>
+    <link rel="stylesheet" href="css/SettingPage.css" />
+</head>
+<body>
+    <header>
+        <nav class="site-nav" role="navigation" aria-label="Main navigation">
+            <a class="brand" href="HomePage.html">
+                <img src="assets/images/dyci-logo-with-text-white.webp" alt="Dr. Yanga Colleges Inc." class="brand-logo" />
+            </a>
+
+            <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+
+            <ul id="nav-list" class="nav-list">
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="MapPage.html">Map</a></li>
+                <li><a href="TourPage.html">Tour</a></li>
+                <li><a href="SettingPage.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="settings-layout">
+        <aside class="settings-sidebar" aria-label="Settings navigation">
+            <ul class="settings-menu">
+                <li><a href="#account" class="active">Account Settings</a></li>
+                <li><a href="#appearance">Appearance</a></li>
+                <li><a href="#help">Help & Support</a></li>
+                <li><a href="#logout" id="sidebar-logout">Logout</a></li>
+            </ul>
+        </aside>
+        <section class="settings-content">
+            <div id="panel-account" class="settings-panel" style="display:block;">
+                <h2>Account Settings</h2>
+                <form class="account-form" autocomplete="off" onsubmit="return false;">
+                    <div class="profile-row">
+                        <!-- Single Avatar Button -->
+                        <button type="button" class="profile-avatar-btn" id="profile-avatar-btn" aria-label="Change Profile Picture">
+                            <img src="https://ui-avatars.com/api/?name=User&background=0b3d91&color=fff&size=96" alt="User Avatar" class="profile-avatar" />
+                            <span class="avatar-edit-label">Edit Profile Picture</span>
+                        </button>
+
+                        <!-- Profile Info -->
+                        <div class="profile-info">
+                            <div class="profile-name" id="profile-name">John Doe</div>
+                            <div class="profile-email" id="profile-email">johndoe@email.com</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" id="email-label">Email</label>
+                        <input type="email" id="email" name="email" value="johndoe@email.com" autocomplete="email" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" value="johndoe" autocomplete="username" disabled />
+                    </div>
+                    <div class="form-group password-group">
+                        <label for="password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" value="password123" autocomplete="current-password" disabled />
+                            <button type="button" class="toggle-password" aria-label="Show password" tabindex="0" style="display:none;">
+                                <span class="eye-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 10C2.8 5.6 7 3 10 3C13 3 17.2 5.6 19 10C17.2 14.4 13 17 10 17C7 17 2.8 14.4 1 10Z" stroke="#555" stroke-width="2" fill="none"/>
+                                        <circle cx="10" cy="10" r="3" stroke="#555" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-actions-row">
+                        <div class="action-left">
+                            <button type="button" class="edit-btn" id="edit-btn">Edit</button>
+                            <button type="button" class="cancel-btn" id="cancel-btn" style="display:none;">Cancel</button>
+                        </div>
+                        <div class="action-right">
+                            <button type="button" class="delete-btn" id="delete-btn">Delete Account</button>
+                        </div>
+                    </div>
+            </div>
+            <div id="panel-appearance" class="settings-panel" style="display:none;">
+                <h2>Appearance</h2>
+                <div class="appearance-box">
+                    <form class="preferences-form" autocomplete="off" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="theme-select">Theme</label>
+                            <select id="theme-select" name="theme">
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="font-size-select">Font Size</label>
+                            <select id="font-size-select" name="font-size">
+                                <option value="normal">Normal</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          
+            <div id="panel-help" class="settings-panel" style="display:none;">
+                <div class="contact-campus-flex">
+
+                    <div class="contact-block">
+                        <h2>Contact Us</h2>
+                        <div class="contact-section">
+                        <div class="contact-title" style="margin-top:16px;">Facebook</div>
+                        <div class="contact-info">
+                            <a href="https://www.facebook.com/YangaCollege" target="_blank" rel="noopener">
+                            Yanga College Facebook Page
+                            </a>
+                        </div>
+                        <div class="contact-title">Frontline</div>
+
+                        <div class="contact-subtitle">Basic Education</div>
+                        <div class="contact-info">(+639)968-262-6292</div>
+                        <div class="contact-info">basiced.frontline@dyci.edu.ph</div>
+
+                        <div class="contact-subtitle">College</div>
+                        <div class="contact-info">(+639)992-389-3296</div>
+                        <div class="contact-info">college.frontline@dyci.edu.ph</div>
+
+                        <div class="contact-subtitle">Registrar</div>
+                        <div class="contact-info">(+639)927-614-2010</div>
+                        <div class="contact-info">basiced.registrar@dyci.edu.ph</div>
+                        <div class="contact-info">college.registrar@dyci.edu.ph</div>
+                        </div>
+                    </div>
+
+                    <div class="campus-block">
+                        <h2>Our Campuses</h2>
+                        <div class="campus-section">
+                        <div class="campus-title">Marciano Campus</div>
+                        <div class="campus-info">182 MacArthur Hwy, Bocaue, 3018 Bulacan</div>
+
+                        <div class="campus-title">Elida Campus</div>
+                        <div class="campus-info">Binang 2nd, Bocaue, Bulacan</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-section">
+                    <h2 class="dept-header">Basic Education Department</h2>
+                    <table class="dept-table">
+                        <thead>
+                            <tr><th>Department</th><th>Contact Details</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PreSchool and Grade School</td>
+                                <td>
+                                    <a href="#">PreSchool and Grade School Official Facebook Page</a><br/>
+                                    (044) 692 6750<br/>
+                                    dycigs1@gmail.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Junior High School</td>
+                                <td>
+                                    <a href="#">Junior High School Official Facebook Page</a><br/>
+                                    (044) 692 6750<br/>
+                                    dyci.jhs@gmail.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Senior High School</td>
+                                <td>
+                                    <a href="#">Senior High School Official Facebook Page</a><br/>
+                                    (044) 692 6750<br/>
+                                    dyci.shs@gmail.com
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="dept-header">College Department</h2>
+                    <table class="dept-table">
+                        <thead>
+                            <tr><th>Department</th><th>Contact Details</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>College of Education</td>
+                                <td>
+                                    <a href="#">College of Education Official Facebook Page</a><br/>
+                                    coed.department@dyci.edu.ph
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>College of Hospitality Management and Tourism</td>
+                                <td>
+                                    <a href="#">College of Hospitality Management and Tourism Official Facebook Page</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>College of Art and Sciences</td>
+                                <td>
+                                    <a href="#">College of Art and Sciences Official Facebook Page</a><br/>
+                                    dyci.cas2019@gmail.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>College of Maritime Education</td>
+                                <td>
+                                    <a href="#">College of Maritime Education Official Facebook Page</a><br/>
+                                    (+639)666-847-5012 (Rey)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>College of Computer Studies</td>
+                                <td>
+                                    <a href="#">College of Computer Studies Official Facebook Page</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>College of Health and Sciences</td>
+                                <td>
+                                    <a href="#">College of Health and Sciences Official Facebook Page</a><br/>
+                                    chs.department@dyci.edu.ph
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>School of Psychology</td>
+                                <td>
+                                    <a href="#">School of Psychology Official Facebook Page</a><br/>
+                                    (+639)936-761-4896
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>School of Mechanical Engineering</td>
+                                <td>
+                                    <a href="#">School of Mechanical Engineering Official Facebook Page</a><br/>
+                                    psmedyci@gmail.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>College of Accountancy</td>
+                                <td>
+                                    <a href="#">College of Accountancy Official Facebook Page</a><br/>
+                                    coa.department@dyci.edu.ph
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>College of Business Administration</td>
+                                <td>
+                                    <a href="#">College of Business Administration Official Facebook Page</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    <script>
+        // Hamburger toggle, animate to X, close on X, and keep menu offset
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.querySelector('.nav-toggle');
+            var navList = document.getElementById('nav-list');
+            if (btn && navList) {
+                btn.addEventListener('click', function () {
+                    var expanded = btn.getAttribute('aria-expanded') === 'true';
+                    btn.setAttribute('aria-expanded', String(!expanded));
+                    navList.classList.toggle('open');
+                });
+                // Close menu on Escape
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+                        btn.setAttribute('aria-expanded', 'false');
+                        navList.classList.remove('open');
+                    }
+                });
+            }
+
+            // Settings sidebar panel switching
+            var sidebarLinks = document.querySelectorAll('.settings-menu a');
+            var panels = document.querySelectorAll('.settings-panel');
+            sidebarLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Remove active from all links
+                    sidebarLinks.forEach(function(l) { l.classList.remove('active'); });
+                    // Hide all panels
+                    panels.forEach(function(panel) { panel.style.display = 'none'; });
+                    // Add active to clicked link
+                    link.classList.add('active');
+                    // Show the corresponding panel
+                    var id = 'panel-' + link.getAttribute('href').replace('#','');
+                    var panel = document.getElementById(id);
+                    if(panel) panel.style.display = 'block';
+                });
+            });
+
+            // THEME SWITCHER LOGIC
+            var themeSelect = document.getElementById('theme-select');
+            var fontSizeSelect = document.getElementById('font-size-select');
+            function applyTheme(theme) {
+                if (theme === 'light' || theme === 'dark') {
+                    document.body.setAttribute('data-theme', theme);
+                }
+            }
+            function setThemeFromStorage() {
+                var stored = localStorage.getItem('site-theme');
+                if (stored === 'light' || stored === 'dark') {
+                    applyTheme(stored);
+                    if (themeSelect) themeSelect.value = stored;
+                }
+            }
+            function setFontSizeFromStorage() {
+                var size = localStorage.getItem('site-font-size') || 'normal';
+                if (fontSizeSelect) fontSizeSelect.value = size;
+                document.documentElement.style.setProperty('--font-size', size === 'large' ? '1.15em' : '1em');
+            }
+
+            // Event listeners for preference controls
+            if (themeSelect) {
+                themeSelect.addEventListener('change', function() {
+                    var val = themeSelect.value;
+                    localStorage.setItem('site-theme', val);
+                    applyTheme(val);
+                });
+            }
+            if (fontSizeSelect) {
+                fontSizeSelect.addEventListener('change', function() {
+                    var val = fontSizeSelect.value;
+                    localStorage.setItem('site-font-size', val);
+                    setFontSizeFromStorage();
+                });
+            }
+
+            // Initialize preferences from storage
+            setThemeFromStorage();
+            setFontSizeFromStorage();
+
+            // Listen for changes from other tabs/windows
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'site-theme') setThemeFromStorage();
+                if (e.key === 'site-font-size') setFontSizeFromStorage();
+            });
+
+            // Account settings edit/save/logout/delete logic
+            var editBtn = document.getElementById('edit-btn');
+            var saveBtn = editBtn; // will change class and text in edit mode
+            var deleteBtn = document.getElementById('delete-btn');
+            var cancelBtn = document.getElementById('cancel-btn');
+            var sidebarLogout = document.getElementById('sidebar-logout');
+            var emailGroup = document.getElementById('email');
+            var emailLabel = document.getElementById('email-label');
+            var usernameInput = document.getElementById('username');
+            var passwordInput = document.getElementById('password');
+            var togglePwdBtn = document.querySelector('.toggle-password');
+            var changePicBtn = document.getElementById('change-pic-btn');
+            var emailInput = document.getElementById('email');
+            var inEdit = false;
+
+            emailGroup.style.display = 'none';
+            emailLabel.style.display = 'none';
+
+            function setEditMode(editing) {
+                inEdit = editing;
+                // Toggle input editability
+                usernameInput.disabled = !editing;
+                passwordInput.disabled = !editing;
+                emailInput.disabled = !editing;
+                // Show/hide email field
+                emailGroup.style.display = editing ? 'block' : 'none';
+                emailLabel.style.display = editing ? 'block' : 'none';
+                // Show/hide password eye
+                togglePwdBtn.style.display = editing ? 'block' : 'none';
+                // Show/hide cancel button
+                if (cancelBtn) cancelBtn.style.display = editing ? 'block' : 'none';
+                // Change Edit to Save
+                if(editing) {
+                    editBtn.textContent = 'Save';
+                    editBtn.classList.add('saveprofilebtn');
+                } else {
+                    editBtn.textContent = 'Edit';
+                    editBtn.classList.remove('saveprofilebtn');
+                }
+            }
+            // Profile avatar button click
+            var avatarBtn = document.getElementById('profile-avatar-btn');
+            if (avatarBtn) {
+                avatarBtn.addEventListener('click', function() {
+                    if (!inEdit) return;
+                    alert('Change Profile Picture (not implemented)');
+                });
+            }
+            if(editBtn) {
+                editBtn.addEventListener('click', function() {
+                    if(!inEdit) {
+                        setEditMode(true);
+                    } else {
+                        // Save logic: just redirect to debug.html for now
+                        window.location.href = 'debug.html?msg=Profile%20saved%20successfully!';
+                    }
+                });
+            }
+            if(sidebarLogout) {
+                sidebarLogout.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'debug.html?msg=You%20have%20been%20logged%20out.';
+                });
+            }
+            if(cancelBtn) {
+                cancelBtn.addEventListener('click', function() {
+                    setEditMode(false);
+                });
+            }
+            if(deleteBtn) {
+                deleteBtn.addEventListener('click', function() {
+                    if(confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                        window.location.href = 'debug.html?msg=Account%20deleted%20successfully.';
+                    }
+                });
+            }
+            if(togglePwdBtn && passwordInput) {
+                togglePwdBtn.addEventListener('click', function() {
+                    if(!inEdit) return;
+                    var isHidden = passwordInput.type === 'password';
+                    passwordInput.type = isHidden ? 'text' : 'password';
+                    togglePwdBtn.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
+                });
+            }
+
+        });
+    </script>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hamburger toggle, animate to X, close on X, and keep menu offset
+            var btn = document.querySelector('.nav-toggle');
+            var navList = document.getElementById('nav-list');
+            if (!btn || !navList) return;
+            btn.addEventListener('click', function () {
+                var expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                navList.classList.toggle('open');
+            });
+            // Close menu on Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+                    btn.setAttribute('aria-expanded', 'false');
+                    navList.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

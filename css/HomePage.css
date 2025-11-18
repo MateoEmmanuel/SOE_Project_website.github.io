@@ -1,0 +1,315 @@
+/* High contrast removed */
+/* Theme variables for light/dark/auto mode */
+:root {
+    --bg-main: #f7f9fb;
+    --bg-panel: #fff;
+    --text-main: #222;
+    --text-muted: #555;
+    --primary: #0b3d91;
+    --primary-dark: #174ea6;
+    --primary-light: #357ae8;
+    --danger: #e53935;
+    --danger-light: #ff6b6b;
+    --danger-dark: #b71c1c;
+    --success: #2ecc40;
+    --success-dark: #145a1f;
+    --gray: #e0e0e0;
+    --gray-dark: #bdbdbd;
+    --avatar-bg: #e6eefc;
+}
+
+[data-theme="dark"] {
+    --bg-main: #181a1b;
+    --bg-panel: #232324;
+    --text-main: #fff;
+    --text-muted: #fff;
+    --primary: #fff;
+    --primary-dark: #fff;
+    --primary-light: #fff;
+    --danger: #ff6b6b;
+    --danger-light: #ffb3b3;
+    --danger-dark: #b71c1c;
+    --success: #2ecc40;
+    --success-dark: #145a1f;
+    --gray: #232324;
+    --gray-dark: #181a1b;
+    --avatar-bg: #232324;
+}
+
+[data-theme="light"] {
+    --bg-main: #f7f9fb;
+    --bg-panel: #fff;
+    --text-main: #222;
+    --text-muted: #555;
+    --primary: #0b3d91;
+    --primary-dark: #174ea6;
+    --primary-light: #357ae8;
+    --danger: #e53935;
+    --danger-light: #ff6b6b;
+    --danger-dark: #b71c1c;
+    --success: #2ecc40;
+    --success-dark: #145a1f;
+    --gray: #e0e0e0;
+    --gray-dark: #bdbdbd;
+    --avatar-bg: #e6eefc;
+}
+
+/* Make all text white in dark mode */
+[data-theme="dark"] body,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] a,
+[data-theme="dark"] li,
+[data-theme="dark"] div,
+[data-theme="dark"] label {
+    color: #fff !important;
+}
+/* Navbar styles (css/nav.css) */
+:root{
+    --nav-bg:#0b3c91;
+    --nav-foreground:#ffffff;
+    --nav-gap:1rem;
+}
+*{box-sizing:border-box}
+
+html, body {
+    margin: 0;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+    background: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    font-size: var(--font-size, 1em);
+}
+
+.site-nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--nav-gap);
+    padding:0rem 1rem;
+    background:var(--nav-bg);
+    color:var(--nav-foreground);
+    position:relative;
+}
+
+.site-nav .brand{
+    color:var(--nav-foreground);
+    text-decoration:none;
+    font-weight:700;
+    font-size:1.05rem
+}
+
+/* Logo sizing inside the brand link */
+.brand img,.brand .brand-logo{
+    display:inline-block;
+    height:100px;
+    max-height:150px;
+    width:auto;
+    vertical-align:middle
+}
+
+.nav-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    font-family: 'Helvetica Neue';
+    font-size: 25px;
+}
+
+.nav-list li a{
+    color:var(--nav-foreground);
+    text-decoration:none;
+    padding:0.5rem 0.5rem;
+    border-radius:6px;
+    display:inline-block
+}
+
+.nav-list li a:focus,.nav-list li a:hover{
+    background:rgba(255,255,255,0.08);
+    outline:none
+}
+
+.nav-toggle{
+    display:none;
+    background:none;
+    border:0;
+    color:inherit;
+    padding:0.4rem;
+    border-radius:6px;
+    z-index: 20;
+    position: relative;
+}
+
+.nav-toggle:focus {
+    outline: none;
+}
+
+/* Only show focus ring for keyboard navigation, not mouse */
+.nav-toggle:focus-visible {
+    outline: 2px solid rgba(255,255,255,0.2);
+}
+
+.hamburger{
+    display:inline-block;
+    width:22px;
+    height:2px;
+    background:var(--nav-foreground);
+    position:relative;
+    transition: background 0.2s;
+}
+.hamburger::before,.hamburger::after{
+    content:'';
+    position:absolute;
+    left:0;
+    width:22px;
+    height:2px;
+    background:var(--nav-foreground);
+    transition: transform 0.2s, top 0.2s, opacity 0.2s;
+}
+.hamburger::before{top:-6px}
+.hamburger::after{top:6px}
+.nav-toggle[aria-expanded="true"] .hamburger{
+    background: transparent;
+}
+.nav-toggle[aria-expanded="true"] .hamburger::before{
+    top:0;
+    transform:rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .hamburger::after{
+    top:0;
+    transform:rotate(-45deg);
+}
+
+/* Mobile behaviour */
+@media (max-width:700px){
+    .nav-toggle{
+        display:block;
+    }
+    .nav-list{
+        position:absolute;
+        top:68px; /* keep menu lower for hamburger visibility */
+        right:1rem;
+        background:var(--nav-bg);
+        flex-direction:column;
+        padding:0.5rem;
+        border-radius:8px;
+        display:none;
+        min-width:160px;
+        box-shadow:0 6px 18px rgba(0,0,0,0.15);
+        font-size:20px;
+        z-index:10;
+    }
+    .nav-list.open{display:flex}
+    .nav-list li{width:100%}
+    .nav-list li a{width:100%}
+}
+
+/* Desktop small polish */
+@media (min-width:701px){
+    .nav-list{position:static;background:transparent}
+}
+
+/* Accessibility: visible focus ring for keyboard users */
+a:focus{outline:3px solid rgba(255,255,255,0.15);outline-offset:2px}
+
+/* background slideshow styles */
+body,html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+.background-slideshow {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-image: url("../assets/images/main_banner/banner1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    animation: change 200s infinite ease-in-out ;
+    
+    border-image: linear-gradient(45deg,#00000085, #0000007a);
+    border-width: 0px;
+    border-style: solid;
+    border-image-slice: fill 1;
+}
+
+.content-overlay {
+    position: absolute;
+    top : 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+}
+
+.content-overlay .overlay-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: -30px;
+}
+
+.content-overlay h1 {
+    color: #fff;
+    font-size: 60px;
+    letter-spacing: 10px;
+    text-shadow: 5px 5px 5px #181a1b;
+}
+
+.content-overlay h12 {
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 8px;
+    text-shadow: 5px 5px 5px #181a1b;
+    margin-top: -30px;
+}
+
+.content-overlay h13 {
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-shadow: 5px 5px 5px #181a1b;
+    margin: 10px 10px 30px 10px;
+}
+
+@keyframes change {
+    0%   { background-image: url("../assets/images/main_banner/banner1.jpg"); }
+    4.17% { background-image: url("../assets/images/main_banner/banner2.jpg"); }
+    8.33% { background-image: url("../assets/images/main_banner/0.webp"); }
+    12.5% { background-image: url("../assets/images/main_banner/1.webp"); }
+    16.67% { background-image: url("../assets/images/main_banner/2.webp"); }
+    20.83% { background-image: url("../assets/images/main_banner/3.webp"); }
+    25%   { background-image: url("../assets/images/main_banner/4.webp"); }
+    29.17% { background-image: url("../assets/images/main_banner/5.webp"); }
+    33.33% { background-image: url("../assets/images/main_banner/6.webp"); }
+    37.5%  { background-image: url("../assets/images/main_banner/7.webp"); }
+    41.67% { background-image: url("../assets/images/main_banner/8.webp"); }
+    45.83% { background-image: url("../assets/images/main_banner/9.webp"); }
+    50%    { background-image: url("../assets/images/main_banner/10.webp"); }
+    54.17% { background-image: url("../assets/images/main_banner/11.webp"); }
+    58.33% { background-image: url("../assets/images/main_banner/12.webp"); }
+    62.5%  { background-image: url("../assets/images/main_banner/13.webp"); }
+    66.67% { background-image: url("../assets/images/main_banner/14.webp"); }
+    70.83% { background-image: url("../assets/images/main_banner/15.webp"); }
+    75%    { background-image: url("../assets/images/main_banner/16.webp"); }
+    79.17% { background-image: url("../assets/images/main_banner/17.webp"); }
+    83.33% { background-image: url("../assets/images/main_banner/18.webp"); }
+    87.5%  { background-image: url("../assets/images/main_banner/19.webp"); }
+    91.67% { background-image: url("../assets/images/main_banner/20.webp"); }
+    95.83% { background-image: url("../assets/images/main_banner/21.webp"); }
+    100%   { background-image: url("../assets/images/main_banner/24.webp"); }
+}

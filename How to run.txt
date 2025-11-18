@@ -1,0 +1,16 @@
+1. extract file to desktop (for proper running)
+2. open the file folder and locate HomePage.html
+
+**since setting is the only thing that has something on it currently**
+
+3. click settings in the navbar
+
+**to test mobile phone UI setup**
+
+minimize the screen size of chrome, or whatever you are using to open this html, then make the size almost the same size as a phone (specifically in horizontal or x-axis or width size).
+
+if successful, the navbar contents should transform into a burger like shape rather than texts.
+
+______
+______	<- like this
+______
