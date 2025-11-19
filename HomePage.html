@@ -61,15 +61,41 @@
     </header>
 
     <div class="background-slideshow">
-        <div class="content-overlay">
-            <img src="assets/images/logo.png" alt="Dr. Yanga Colleges Inc. Logo" class="overlay-logo" />
-            <h1>Welcome to <spam>DYCI</spam></h1>
-            <h12>3D Interactive Map</h2>
-            <br>
-            <h13>Explore the campus like never before with our immersive 3D map experience.</h3>
-            
+                <!-- Slideshow Images -->
+                    <img src="assets/images/main_banner/banner1.jpg" class="slide active">
+                    <img src="assets/images/main_banner/banner2.jpg" class="slide">
+                    <img src="assets/images/main_banner/0.webp" class="slide">
+                    <img src="assets/images/main_banner/1.webp" class="slide">
+                    <img src="assets/images/main_banner/2.webp" class="slide">
+                    <img src="assets/images/main_banner/3.webp" class="slide">
+                    <img src="assets/images/main_banner/4.webp" class="slide">
+                    <img src="assets/images/main_banner/5.webp" class="slide">
+                    <img src="assets/images/main_banner/6.webp" class="slide">
+                    <img src="assets/images/main_banner/7.webp" class="slide">
+                    <img src="assets/images/main_banner/8.webp" class="slide">
+                    <img src="assets/images/main_banner/9.webp" class="slide">
+                    <img src="assets/images/main_banner/10.webp" class="slide">
+                    <img src="assets/images/main_banner/11.webp" class="slide">
+                    <img src="assets/images/main_banner/12.webp" class="slide">
+                    <img src="assets/images/main_banner/13.webp" class="slide">
+                    <img src="assets/images/main_banner/14.webp" class="slide">
+                    <img src="assets/images/main_banner/15.webp" class="slide">
+                    <img src="assets/images/main_banner/16.webp" class="slide">
+                    <img src="assets/images/main_banner/17.webp" class="slide">
+                    <img src="assets/images/main_banner/18.webp" class="slide">
+                    <img src="assets/images/main_banner/19.webp" class="slide">
+                    <img src="assets/images/main_banner/20.webp" class="slide">
+                    <img src="assets/images/main_banner/21.webp" class="slide">
+                    <img src="assets/images/main_banner/24.webp" class="slide">
+
+            <div class="content-overlay">
+                <img src="assets/images/logo.png" alt="Dr. Yanga Colleges Inc. Logo" class="overlay-logo" />
+                <h1>Welcome to <spam>DYCI</spam></h1>
+                <h12>3D Interactive Map</h2>
+                <br>
+                <h13>Explore the campus like never before with our immersive 3D map experience.</h3>
+            </div>
         </div>
-    </div>
 
     <main>
         <!-- existing page content goes here -->
@@ -97,5 +123,17 @@
             });
         });
     </script>
+                <script>
+        const slides = document.querySelectorAll(".background-slideshow img.slide");
+        let current = 0;
+        const interval = 5000; // 5 seconds per slide
+        
+        setInterval(() => {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }, interval);
+        </script>
 </body>
+
 </html>
