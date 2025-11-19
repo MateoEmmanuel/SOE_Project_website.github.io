@@ -265,62 +265,81 @@ body,html {
         left: 50%;
         transform: translate(-50%, -50%);
         text-transform: uppercase;
-        text-transform: 30px; 
+        font-size-adjust: 0.5;
     }
-
-    .content-overlay .overlay-logo{
-        width: 100px;
+        
+    .content-overlay .overlay-logo {
+        width: 200px;
         height: auto;
-        margin-bottom: -20px;
+        margin-bottom: -30px;
     }
-    .content-overlay h1{
-        font-size: 50px;
+    
+    .content-overlay h1 {
+        color: #fff;
+        font-size: 60px;
         letter-spacing: 10px;
         text-shadow: 5px 5px 5px #181a1b;
     }
+    
     .content-overlay h12 {
-        font-size: 20px;
+        color: #fff;
+        font-size: 30px;
         letter-spacing: 8px;
         text-shadow: 5px 5px 5px #181a1b;
         margin-top: -30px;
     }
     
     .content-overlay h13 {
+        color: #fff;
         font-size: 16px;
         letter-spacing: 4px;
         text-shadow: 5px 5px 5px #181a1b;
         margin: 10px 10px 30px 10px;
     }
+    
 
 }
+/*pc size*/
+@media (min-width:701px){
+    .content-overlay {
+        position: absolute;
+        top : 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        font-size-adjust: 0.5;
+    }
+        
+    .content-overlay .overlay-logo {
+        width: 200px;
+        height: auto;
+        margin-bottom: -30px;
+    }
+    
+    .content-overlay h1 {
+        color: #fff;
+        font-size: 60px;
+        letter-spacing: 10px;
+        text-shadow: 5px 5px 5px #181a1b;
+    }
+    
+    .content-overlay h12 {
+        color: #fff;
+        font-size: 30px;
+        letter-spacing: 8px;
+        text-shadow: 5px 5px 5px #181a1b;
+        margin-top: -30px;
+    }
+    
+    .content-overlay h13 {
+        color: #fff;
+        font-size: 16px;
+        letter-spacing: 4px;
+        text-shadow: 5px 5px 5px #181a1b;
+        margin: 10px 10px 30px 10px;
+    }
+    
 
-.content-overlay .overlay-logo {
-    width: 200px;
-    height: auto;
-    margin-bottom: -30px;
-}
-
-.content-overlay h1 {
-    color: #fff;
-    font-size: 60px;
-    letter-spacing: 10px;
-    text-shadow: 5px 5px 5px #181a1b;
-}
-
-.content-overlay h12 {
-    color: #fff;
-    font-size: 30px;
-    letter-spacing: 8px;
-    text-shadow: 5px 5px 5px #181a1b;
-    margin-top: -30px;
-}
-
-.content-overlay h13 {
-    color: #fff;
-    font-size: 16px;
-    letter-spacing: 4px;
-    text-shadow: 5px 5px 5px #181a1b;
-    margin: 10px 10px 30px 10px;
 }
 
 @keyframes change {
@@ -350,5 +369,6 @@ body,html {
     95.83% { background-image: url("../assets/images/main_banner/21.webp"); }
     100%   { background-image: url("../assets/images/main_banner/24.webp"); }
 }
+
 
 
