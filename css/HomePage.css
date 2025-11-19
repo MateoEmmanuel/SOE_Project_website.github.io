@@ -259,6 +259,15 @@ body,html {
 
 /* Mobile behaviour */
 @media (max-width:700px){
+    .content-overlay {
+        position: absolute;
+        top : 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        text-transform: 30px; 
+    }
+
     .content-overlay .overlay-logo{
         width: 100px;
         height: auto;
@@ -341,4 +350,5 @@ body,html {
     95.83% { background-image: url("../assets/images/main_banner/21.webp"); }
     100%   { background-image: url("../assets/images/main_banner/24.webp"); }
 }
+
 
