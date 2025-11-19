@@ -257,6 +257,34 @@ body,html {
     text-transform: uppercase;
 }
 
+/* Mobile behaviour */
+@media (max-width:700px){
+    .content-overlay .overlay-logo{
+        width: 100px;
+        height: auto;
+        margin-bottom: -20px;
+    }
+    .content-overlay h1{
+        font-size: 50px;
+        letter-spacing: 10px;
+        text-shadow: 5px 5px 5px #181a1b;
+    }
+    .content-overlay h12 {
+        font-size: 20px;
+        letter-spacing: 8px;
+        text-shadow: 5px 5px 5px #181a1b;
+        margin-top: -30px;
+    }
+    
+    .content-overlay h13 {
+        font-size: 16px;
+        letter-spacing: 4px;
+        text-shadow: 5px 5px 5px #181a1b;
+        margin: 10px 10px 30px 10px;
+    }
+
+}
+
 .content-overlay .overlay-logo {
     width: 200px;
     height: auto;
@@ -313,3 +341,4 @@ body,html {
     95.83% { background-image: url("../assets/images/main_banner/21.webp"); }
     100%   { background-image: url("../assets/images/main_banner/24.webp"); }
 }
+
