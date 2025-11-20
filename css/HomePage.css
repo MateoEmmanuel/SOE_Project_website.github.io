@@ -318,7 +318,7 @@ body,html {
 @media (min-width:701px){
     .content-overlay {
         position: absolute;
-        top : 40%;
+        top : 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-transform: uppercase;
@@ -356,6 +356,7 @@ body,html {
     
 
 }
+
 
 
 
